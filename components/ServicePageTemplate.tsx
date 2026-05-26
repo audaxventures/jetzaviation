@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Phone, Mail } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
@@ -31,9 +30,14 @@ export default function ServicePageTemplate({
 }: ServicePageTemplateProps) {
   return (
     <main className="min-h-screen" style={{ backgroundColor: "#F9FAFB" }}>
-      {/* Hero */}
-      <section className="relative h-[60vh] flex items-center overflow-hidden">
-        <Image src={heroImage} alt={title} fill className="object-cover" preload sizes="100vw" />
+      <section
+        className="relative h-[60vh] flex items-center overflow-hidden"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(135deg, rgba(15,45,61,0.7) 0%, rgba(42,100,117,0.5) 100%)" }}
@@ -60,10 +64,8 @@ export default function ServicePageTemplate({
         </div>
       </section>
 
-      {/* Main content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Content */}
           <div className="lg:col-span-2 space-y-12">
             <AnimatedSection>
               <h2
@@ -79,7 +81,6 @@ export default function ServicePageTemplate({
               </div>
             </AnimatedSection>
 
-            {/* Benefits */}
             <AnimatedSection delay={0.1}>
               <h3
                 className="text-2xl font-bold mb-6"
@@ -97,7 +98,6 @@ export default function ServicePageTemplate({
               </div>
             </AnimatedSection>
 
-            {/* Process Steps */}
             <AnimatedSection delay={0.2}>
               <h3
                 className="text-2xl font-bold mb-8"
@@ -128,7 +128,6 @@ export default function ServicePageTemplate({
             </AnimatedSection>
           </div>
 
-          {/* Sidebar CTA */}
           <div className="lg:col-span-1">
             <div className="sticky top-28">
               <AnimatedSection direction="right">
@@ -169,7 +168,6 @@ export default function ServicePageTemplate({
                   </div>
                 </div>
 
-                {/* Other services */}
                 <div className="mt-6 bg-white rounded-2xl p-6 border border-gray-100">
                   <h4 className="font-bold mb-4 text-sm uppercase tracking-wider text-gray-400">
                     Other Services
@@ -198,7 +196,6 @@ export default function ServicePageTemplate({
         </div>
       </div>
 
-      {/* Bottom CTA */}
       <section className="py-20" style={{ backgroundColor: "#F0F4F5" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
