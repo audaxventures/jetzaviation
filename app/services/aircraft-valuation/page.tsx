@@ -1,9 +1,8 @@
 import { BarChart3 } from "lucide-react";
-import { getUnsplashImage } from "@/lib/unsplash";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
 
 export default async function AircraftValuationPage() {
-  const heroImage = await getUnsplashImage("jet apron");
+  const heroImage = "https://images.unsplash.com/photo-1474302771604-5c8b3d17b9c1?w=1600&q=80";
 
   return (
     <ServicePageTemplate

@@ -1,9 +1,8 @@
 import { Search } from "lucide-react";
-import { getUnsplashImage } from "@/lib/unsplash";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
 
 export default async function AircraftAcquisitionPage() {
-  const heroImage = await getUnsplashImage("corporate aviation");
+  const heroImage = "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1600&q=80";
 
   return (
     <ServicePageTemplate

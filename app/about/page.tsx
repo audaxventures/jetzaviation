@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Target, Eye, Heart } from "lucide-react";
-import { getUnsplashImage } from "@/lib/unsplash";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroSection from "@/components/HeroSection";
 
@@ -27,8 +26,8 @@ const values = [
 ];
 
 export default async function AboutPage() {
-  const heroImage = await getUnsplashImage("business jet tarmac");
-  const missionImage = await getUnsplashImage("corporate aviation");
+  const heroImage = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80";
+  const missionImage = "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1600&q=80";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>

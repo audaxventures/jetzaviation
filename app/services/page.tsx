@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Handshake, Search, BarChart3, Briefcase, ArrowRight } from "lucide-react";
-import { getUnsplashImage } from "@/lib/unsplash";
 import HeroSection from "@/components/HeroSection";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -36,7 +35,7 @@ const services = [
 ];
 
 export default async function ServicesPage() {
-  const heroImage = await getUnsplashImage("private jet");
+  const heroImage = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>

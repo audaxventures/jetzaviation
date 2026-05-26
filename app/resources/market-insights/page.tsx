@@ -1,11 +1,10 @@
 import { blogPosts } from "@/lib/blog-data";
-import { getUnsplashImage } from "@/lib/unsplash";
 import HeroSection from "@/components/HeroSection";
 import BlogCard from "@/components/BlogCard";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default async function MarketInsightsPage() {
-  const heroImage = await getUnsplashImage("business aviation");
+  const heroImage = "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1600&q=80";
 
   const categories = [...new Set(blogPosts.map((p) => p.category))];
 

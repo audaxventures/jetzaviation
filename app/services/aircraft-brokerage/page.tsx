@@ -1,9 +1,8 @@
 import { Handshake } from "lucide-react";
-import { getUnsplashImage } from "@/lib/unsplash";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
 
 export default async function AircraftBrokeragePage() {
-  const heroImage = await getUnsplashImage("private jet");
+  const heroImage = "https://images.unsplash.com/photo-1474302771604-5c8b3d17b9c1?w=1600&q=80";
 
   return (
     <ServicePageTemplate

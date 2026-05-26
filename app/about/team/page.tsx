@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Mail } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroSection from "@/components/HeroSection";
-import { getUnsplashImage } from "@/lib/unsplash";
 import { LinkedinIcon } from "@/components/SocialIcons";
 
 const team = [
@@ -17,7 +16,7 @@ const team = [
 ];
 
 export default async function TeamPage() {
-  const heroImage = await getUnsplashImage("corporate aviation");
+  const heroImage = "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1600&q=80";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>

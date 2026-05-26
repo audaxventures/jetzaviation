@@ -1,4 +1,3 @@
-import { getUnsplashImage } from "@/lib/unsplash";
 import HeroSection from "@/components/HeroSection";
 import TestimonialCard from "@/components/TestimonialCard";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -37,7 +36,7 @@ const testimonials = [
 ];
 
 export default async function TestimonialsPage() {
-  const heroImage = await getUnsplashImage("private aviation");
+  const heroImage = "https://images.unsplash.com/photo-1474302771604-5c8b3d17b9c1?w=1600&q=80";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>

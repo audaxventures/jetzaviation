@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { BarChart2, BookOpen, ArrowRight } from "lucide-react";
-import { getUnsplashImage } from "@/lib/unsplash";
 import HeroSection from "@/components/HeroSection";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default async function ResourcesPage() {
-  const heroImage = await getUnsplashImage("corporate jet");
+  const heroImage = "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1600&q=80";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>

@@ -1,9 +1,8 @@
 import { Briefcase } from "lucide-react";
-import { getUnsplashImage } from "@/lib/unsplash";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
 
 export default async function AviationConsultingPage() {
-  const heroImage = await getUnsplashImage("cockpit");
+  const heroImage = "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=1600&q=80";
 
   return (
     <ServicePageTemplate

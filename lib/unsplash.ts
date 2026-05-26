@@ -1,5 +1,3 @@
-const ACCESS_KEY = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY;
-
 const FALLBACKS: Record<string, string> = {
   "corporate jet": "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1600&q=80",
   "private jet": "https://images.unsplash.com/photo-1474302771604-5c8b3d17b9c1?w=1600&q=80",
@@ -15,19 +13,5 @@ const FALLBACKS: Record<string, string> = {
 };
 
 export async function getUnsplashImage(query: string): Promise<string> {
-  const fallback = FALLBACKS[query] ?? FALLBACKS["corporate jet"];
-
-  if (!ACCESS_KEY) return fallback;
-
-  try {
-    const res = await fetch(
-      `https://api.unsplash.com/photos/random?query=${encodeURIComponent(query)}&orientation=landscape&client_id=${ACCESS_KEY}`,
-      { next: { revalidate: 3600 } }
-    );
-    if (!res.ok) return fallback;
-    const data = await res.json();
-    return data?.urls?.regular ?? fallback;
-  } catch {
-    return fallback;
-  }
+  return FALLBACKS[query] ?? FALLBACKS["corporate jet"];
 }
