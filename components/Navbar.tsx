@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
@@ -30,22 +30,14 @@ interface DropdownProps {
 
 function Dropdown({ label, links }: DropdownProps) {
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   return (
-    <div ref={ref} className="relative">
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
       <button
-        onClick={() => setOpen(!open)}
         className="flex items-center gap-1 text-navy font-medium hover:text-teal transition-colors duration-200 py-2"
         style={{ color: "#0F2D3D" }}
       >
@@ -56,12 +48,11 @@ function Dropdown({ label, links }: DropdownProps) {
         />
       </button>
       {open && (
-        <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
+        <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              onClick={() => setOpen(false)}
               className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-teal/5 hover:text-teal transition-colors duration-150"
               style={{ "--tw-text-opacity": 1 } as React.CSSProperties}
             >
@@ -115,13 +106,6 @@ export default function Navbar() {
           <Dropdown label="About" links={aboutLinks} />
           <Dropdown label="Services" links={servicesLinks} />
           <Dropdown label="Resources" links={resourcesLinks} />
-          <Link
-            href="/connect"
-            className="font-medium hover:text-teal transition-colors duration-200"
-            style={{ color: "#0F2D3D" }}
-          >
-            Connect
-          </Link>
         </div>
 
         {/* CTA Button */}
@@ -236,15 +220,6 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-
-            <Link
-              href="/connect"
-              onClick={() => setMobileOpen(false)}
-              className="block py-3 text-lg font-semibold border-b border-gray-100"
-              style={{ color: "#0F2D3D" }}
-            >
-              Connect
-            </Link>
 
             <div className="pt-4">
               <Link

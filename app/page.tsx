@@ -11,7 +11,6 @@ import {
   Globe,
   ArrowRight,
 } from "lucide-react";
-import { getUnsplashImage } from "@/lib/unsplash";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -89,8 +88,8 @@ const differentiators = [
 ];
 
 export default async function HomePage() {
-  const heroImage = await getUnsplashImage("private jet runway");
-  const aboutImage = await getUnsplashImage("corporate jet interior");
+  const heroImage = "https://images.unsplash.com/photo-1474302771604-5c8b3d17b9c1?w=1600&q=80";
+  const aboutImage = "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1600&q=80";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>

@@ -30,8 +30,7 @@ const navGroups = [
   {
     title: "Company",
     links: [
-      { label: "Connect With Us", href: "/connect" },
-      { label: "Contact", href: "/contact" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
 ];

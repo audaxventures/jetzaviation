@@ -66,7 +66,7 @@ export default async function MarketInsightsPage() {
               and aviation news.
             </p>
             <a
-              href="/connect"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white font-semibold text-sm hover:shadow-xl transition-all"
               style={{ color: "#2A6475" }}
             >
