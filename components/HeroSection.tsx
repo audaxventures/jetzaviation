@@ -32,7 +32,7 @@ export default function HeroSection({
         alt={headline}
         fill
         className="object-cover"
-        priority
+        preload
         sizes="100vw"
       />
       <div

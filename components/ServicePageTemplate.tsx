@@ -33,7 +33,7 @@ export default function ServicePageTemplate({
     <main className="min-h-screen" style={{ backgroundColor: "#F9FAFB" }}>
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center overflow-hidden">
-        <Image src={heroImage} alt={title} fill className="object-cover" priority sizes="100vw" />
+        <Image src={heroImage} alt={title} fill className="object-cover" preload sizes="100vw" />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(135deg, rgba(15,45,61,0.7) 0%, rgba(42,100,117,0.5) 100%)" }}
