@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 interface HeroSectionProps {
@@ -26,15 +25,14 @@ export default function HeroSection({
   centered = false,
 }: HeroSectionProps) {
   return (
-    <section className={`relative ${height} flex items-center overflow-hidden`}>
-      <Image
-        src={imageUrl}
-        alt={headline}
-        fill
-        className="object-cover"
-        preload
-        sizes="100vw"
-      />
+    <section
+      className={`relative ${height} flex items-center overflow-hidden`}
+      style={{
+        backgroundImage: `url(${imageUrl})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div
         className="absolute inset-0"
         style={{
@@ -109,7 +107,6 @@ export default function HeroSection({
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
