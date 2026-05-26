@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   Handshake,
@@ -87,13 +86,12 @@ const differentiators = [
   },
 ];
 
-export default async function HomePage() {
+export default function HomePage() {
   const heroImage = "https://images.unsplash.com/photo-1474302771604-5c8b3d17b9c1?w=1600&q=80";
   const aboutImage = "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1600&q=80";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>
-      {/* Hero */}
       <HeroSection
         imageUrl={heroImage}
         headline="Elevating Your Aircraft Acquisition Experience"
@@ -102,20 +100,18 @@ export default async function HomePage() {
         ctaSecondary={{ label: "Contact Us", href: "/contact" }}
       />
 
-      {/* Intro Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection direction="left">
-              <div className="relative h-80 sm:h-96 lg:h-[480px] rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src={aboutImage}
-                  alt="Jetz Aviation — Private jet interior"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
+              <div
+                className="h-80 sm:h-96 lg:h-[480px] rounded-2xl overflow-hidden shadow-xl"
+                style={{
+                  backgroundImage: `url(${aboutImage})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
             </AnimatedSection>
             <AnimatedSection direction="right">
               <p
@@ -154,7 +150,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Services */}
       <section className="py-24" style={{ backgroundColor: "#F9FAFB" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
@@ -183,7 +178,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Why Jetz */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
@@ -222,7 +216,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="py-24" style={{ backgroundColor: "#F0F4F5" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
@@ -256,7 +249,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Footer CTA Strip */}
       <section
         className="py-20"
         style={{ background: "linear-gradient(135deg, #0F2D3D 0%, #2A6475 100%)" }}
