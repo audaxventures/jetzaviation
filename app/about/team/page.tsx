@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Mail } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroSection from "@/components/HeroSection";
@@ -50,15 +49,10 @@ export default async function TeamPage() {
               <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-3">
                   {/* Avatar */}
-                  <div className="relative h-80 md:h-auto">
-                    <Image
-                      src={member.avatar}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
+                  <div
+                    className="h-80 md:h-full min-h-[320px]"
+                    style={{ backgroundImage: `url(${member.avatar})`, backgroundSize: "cover", backgroundPosition: "center top" }}
+                  />
                   {/* Bio */}
                   <div className="md:col-span-2 p-8 lg:p-12">
                     <h3
