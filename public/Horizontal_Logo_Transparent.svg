@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+  <!-- Paper plane / arrow icon -->
+  <g transform="translate(4, 8)">
+    <!-- Main arrow/plane shape -->
+    <polygon points="0,22 32,10 24,22 32,34" fill="#2A6475" opacity="0.9"/>
+    <polygon points="32,10 18,22 32,34 26,22" fill="#0F2D3D" opacity="0.8"/>
+    <!-- Wing detail -->
+    <line x1="16" y1="22" x2="32" y2="10" stroke="#2A6475" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  <!-- Jetz text -->
+  <text x="52" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#2A6475" letter-spacing="0.5">Jetz</text>
+  <!-- Aviation text -->
+  <text x="52" y="48" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="400" fill="#0F2D3D" letter-spacing="3">AVIATION</text>
+</svg>
