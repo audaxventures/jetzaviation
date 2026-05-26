@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Target, Eye, Heart } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -51,7 +50,7 @@ export default async function AboutPage() {
               >
                 Our Story
               </p>
-              <h2
+            <h2
                 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight"
                 style={{ fontFamily: "var(--font-playfair)", color: "#0F2D3D" }}
               >
@@ -77,15 +76,10 @@ export default async function AboutPage() {
               </p>
             </AnimatedSection>
             <AnimatedSection direction="right">
-              <div className="relative h-80 sm:h-96 lg:h-[480px] rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src={missionImage}
-                  alt="Business aviation excellence"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
+              <div
+                className="h-80 sm:h-96 lg:h-[480px] rounded-2xl overflow-hidden shadow-xl"
+                style={{ backgroundImage: `url(${missionImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
+              />
             </AnimatedSection>
           </div>
         </div>

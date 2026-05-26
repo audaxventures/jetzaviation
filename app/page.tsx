@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   Handshake,
@@ -107,15 +106,10 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection direction="left">
-              <div className="relative h-80 sm:h-96 lg:h-[480px] rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src={aboutImage}
-                  alt="Jetz Aviation — Private jet interior"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
+              <div
+                className="h-80 sm:h-96 lg:h-[480px] rounded-2xl overflow-hidden shadow-xl"
+                style={{ backgroundImage: `url(${aboutImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
+              />
             </AnimatedSection>
             <AnimatedSection direction="right">
               <p
