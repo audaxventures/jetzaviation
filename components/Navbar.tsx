@@ -132,7 +132,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-white z-40 overflow-y-auto">
+        <div className="lg:hidden absolute left-0 right-0 top-full bg-white z-40 overflow-y-auto" style={{ height: "calc(100vh - 5rem)" }}>
           <div className="px-6 py-8 space-y-2">
             {/* About */}
             <div>
