@@ -4,7 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default async function ResourcesPage() {
-  const heroImage = "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1600&q=80";
+  const heroImage = "/images/jet-interior.jpg";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>

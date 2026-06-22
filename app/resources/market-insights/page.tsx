@@ -4,7 +4,7 @@ import BlogCard from "@/components/BlogCard";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default async function MarketInsightsPage() {
-  const heroImage = "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1600&q=80";
+  const heroImage = "/images/jet-cockpit.jpg";
 
   const categories = [...new Set(blogPosts.map((p) => p.category))];
 

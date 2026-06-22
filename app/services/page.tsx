@@ -35,7 +35,7 @@ const services = [
 ];
 
 export default async function ServicesPage() {
-  const heroImage = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80";
+  const heroImage = "/images/jet-runway.jpg";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>

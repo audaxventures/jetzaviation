@@ -2,7 +2,7 @@ import { BarChart3 } from "lucide-react";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
 
 export default async function AircraftValuationPage() {
-  const heroImage = "https://images.unsplash.com/photo-1474302771604-5c8b3d17b9c1?w=1600&q=80";
+  const heroImage = "/images/jet-interior.jpg";
 
   return (
     <ServicePageTemplate

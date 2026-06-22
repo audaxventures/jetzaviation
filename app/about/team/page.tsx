@@ -15,7 +15,7 @@ const team = [
 ];
 
 export default async function TeamPage() {
-  const heroImage = "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1600&q=80";
+  const heroImage = "/images/jet-cockpit.jpg";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>

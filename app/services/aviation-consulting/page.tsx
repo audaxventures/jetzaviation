@@ -2,7 +2,7 @@ import { Briefcase } from "lucide-react";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
 
 export default async function AviationConsultingPage() {
-  const heroImage = "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=1600&q=80";
+  const heroImage = "/images/jet-cockpit.jpg";
 
   return (
     <ServicePageTemplate
