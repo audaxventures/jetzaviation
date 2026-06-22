@@ -11,7 +11,7 @@ export default function Logo({ className = "", inverted = false }: LogoProps) {
     <img
       src="/Horizontal%20Logo%20Transparent.png"
       alt="Jetz Aviation"
-      className={`h-10 w-auto object-contain ${inverted ? "brightness-0 invert" : ""} ${className}`}
+      className={`h-14 w-auto object-contain ${inverted ? "brightness-0 invert" : ""} ${className}`}
     />
   );
 }
