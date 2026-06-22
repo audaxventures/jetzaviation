@@ -25,12 +25,11 @@ const values = [
 ];
 
 export default async function AboutPage() {
-  const heroImage = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80";
-  const missionImage = "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1600&q=80";
+  const heroImage = "/images/jet-exterior.jpg";
+  const missionImage = "/images/jet-interior.jpg";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>
-      {/* Hero */}
       <HeroSection
         imageUrl={heroImage}
         headline="About Jetz Aviation"
@@ -39,7 +38,6 @@ export default async function AboutPage() {
         height="h-[65vh]"
       />
 
-      {/* Company Story */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -85,7 +83,6 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Mission */}
       <section className="py-20" style={{ backgroundColor: "#F0F4F5" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
@@ -111,7 +108,6 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
@@ -152,7 +148,6 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Team / Testimonials links */}
       <section className="py-16" style={{ backgroundColor: "#F9FAFB" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

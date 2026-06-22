@@ -15,7 +15,7 @@ const team = [
 ];
 
 export default async function TeamPage() {
-  const heroImage = "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1600&q=80";
+  const heroImage = "/images/jet-cockpit.jpg";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>
@@ -48,12 +48,10 @@ export default async function TeamPage() {
             <AnimatedSection key={member.name} delay={i * 0.15}>
               <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-3">
-                  {/* Avatar */}
                   <div
                     className="h-80 md:h-full min-h-[320px]"
                     style={{ backgroundImage: `url(${member.avatar})`, backgroundSize: "cover", backgroundPosition: "center top" }}
                   />
-                  {/* Bio */}
                   <div className="md:col-span-2 p-8 lg:p-12">
                     <h3
                       className="text-2xl font-bold mb-1"
@@ -100,7 +98,6 @@ export default async function TeamPage() {
         </div>
       </section>
 
-      {/* Culture section */}
       <section className="py-20" style={{ backgroundColor: "#F0F4F5" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>

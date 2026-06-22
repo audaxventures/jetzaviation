@@ -4,7 +4,7 @@ import BlogCard from "@/components/BlogCard";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default async function MarketInsightsPage() {
-  const heroImage = "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1600&q=80";
+  const heroImage = "/images/jet-cockpit.jpg";
 
   const categories = [...new Set(blogPosts.map((p) => p.category))];
 
@@ -47,7 +47,6 @@ export default async function MarketInsightsPage() {
         </div>
       </section>
 
-      {/* Subscribe strip */}
       <section
         className="py-16"
         style={{ background: "linear-gradient(135deg, #0F2D3D 0%, #2A6475 100%)" }}

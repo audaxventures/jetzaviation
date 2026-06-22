@@ -35,7 +35,7 @@ const services = [
 ];
 
 export default async function ServicesPage() {
-  const heroImage = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80";
+  const heroImage = "/images/jet-runway.jpg";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>
@@ -60,71 +60,49 @@ export default async function ServicesPage() {
               className="text-3xl sm:text-4xl font-bold mb-4"
               style={{ fontFamily: "var(--font-playfair)", color: "#0F2D3D" }}
             >
-              Full-Spectrum Aviation Services
+              Comprehensive Aviation Services
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Whether you are buying, selling, or seeking strategic guidance, Jetz Aviation
-              provides expert support across every phase of your aviation journey.
+              Each service is delivered with the same commitment to expertise, discretion,
+              and client outcomes that defines the Jetz Aviation standard.
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-6">
             {services.map((service, i) => (
               <AnimatedSection key={service.title} delay={i * 0.1}>
-                <Link href={service.href} className="group block">
-                  <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full">
+                <Link
+                  href={service.href}
+                  className="flex items-center justify-between p-8 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 group"
+                >
+                  <div className="flex items-center gap-6">
                     <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+                      className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
                       style={{ backgroundColor: "rgba(42, 100, 117, 0.08)" }}
                     >
                       <service.Icon size={26} style={{ color: "#2A6475" }} />
                     </div>
-                    <h3
-                      className="text-2xl font-bold mb-4"
-                      style={{ fontFamily: "var(--font-playfair)", color: "#0F2D3D" }}
-                    >
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
-                    <span
-                      className="inline-flex items-center gap-2 font-semibold text-sm group-hover:gap-3 transition-all"
-                      style={{ color: "#2A6475" }}
-                    >
-                      Learn More <ArrowRight size={16} />
-                    </span>
+                    <div>
+                      <h3
+                        className="text-xl font-bold mb-2"
+                        style={{ fontFamily: "var(--font-playfair)", color: "#0F2D3D" }}
+                      >
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
+                  <ArrowRight
+                    size={22}
+                    className="flex-shrink-0 ml-6 group-hover:translate-x-1 transition-transform"
+                    style={{ color: "#2A6475" }}
+                  />
                 </Link>
               </AnimatedSection>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section
-        className="py-20"
-        style={{ background: "linear-gradient(135deg, #0F2D3D 0%, #2A6475 100%)" }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedSection>
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-white mb-6"
-              style={{ fontFamily: "var(--font-playfair)" }}
-            >
-              Not Sure Where to Start?
-            </h2>
-            <p className="text-gray-300 mb-8">
-              Contact us for a no-obligation consultation. We will help you identify the right
-              service for your specific aviation objectives.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white font-semibold text-base hover:shadow-xl transition-all"
-              style={{ color: "#2A6475" }}
-            >
-              Get in Touch <ArrowRight size={18} />
-            </Link>
-          </AnimatedSection>
         </div>
       </section>
     </div>

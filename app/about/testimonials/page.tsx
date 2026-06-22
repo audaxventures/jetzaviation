@@ -36,7 +36,7 @@ const testimonials = [
 ];
 
 export default async function TestimonialsPage() {
-  const heroImage = "https://images.unsplash.com/photo-1474302771604-5c8b3d17b9c1?w=1600&q=80";
+  const heroImage = "/images/jet-runway.jpg";
 
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>
@@ -82,7 +82,6 @@ export default async function TestimonialsPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section
         className="py-20"
         style={{ background: "linear-gradient(135deg, #0F2D3D 0%, #2A6475 100%)" }}
