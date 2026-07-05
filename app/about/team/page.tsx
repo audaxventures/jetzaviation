@@ -8,7 +8,6 @@ const team = [
     name: "Mike Zaporzan",
     title: "President",
     bio: "Mike Zaporzan founded Jetz Aviation with a vision to bring institutional-grade aircraft acquisition expertise to individual and corporate clients across Canada and internationally. With an extensive background in business aviation transactions, market analysis, and client advisory, Mike has guided clients through the full spectrum of aircraft acquisitions — from light jets to ultra-long-range cabin aircraft.\n\nMike is known for his straight-forward approach, deep market relationships, and ability to navigate complex transactions efficiently. He takes personal responsibility for every client engagement, ensuring that each acquisition reflects the client's specific mission requirements, financial objectives, and operational preferences.\n\nA licensed pilot and passionate aviation enthusiast, Mike brings firsthand appreciation for what makes an aircraft the right fit — technically, operationally, and experientially.",
-    avatar: "https://i.pravatar.cc/300?img=11",
     email: "mike@jetzaviation.com",
     linkedin: "https://linkedin.com",
   },
@@ -46,50 +45,48 @@ export default async function TeamPage() {
 
           {team.map((member, i) => (
             <AnimatedSection key={member.name} delay={i * 0.15}>
-              <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                <div className="grid grid-cols-1 md:grid-cols-3">
-                  <div
-                    className="h-80 md:h-full min-h-[320px]"
-                    style={{ backgroundImage: `url(${member.avatar})`, backgroundSize: "cover", backgroundPosition: "center top" }}
-                  />
-                  <div className="md:col-span-2 p-8 lg:p-12">
-                    <h3
-                      className="text-2xl font-bold mb-1"
-                      style={{ fontFamily: "var(--font-playfair)", color: "#0F2D3D" }}
-                    >
-                      {member.name}
-                    </h3>
-                    <p
-                      className="text-base font-semibold mb-6"
+              <div className="max-w-3xl mx-auto bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                <div
+                  className="h-1.5 w-full"
+                  style={{ backgroundColor: "#2A6475" }}
+                />
+                <div className="p-8 lg:p-12 text-center">
+                  <h3
+                    className="text-2xl font-bold mb-1"
+                    style={{ fontFamily: "var(--font-playfair)", color: "#0F2D3D" }}
+                  >
+                    {member.name}
+                  </h3>
+                  <p
+                    className="text-base font-semibold mb-8"
+                    style={{ color: "#2A6475" }}
+                  >
+                    {member.title}
+                  </p>
+                  <div className="space-y-4 text-left">
+                    {member.bio.split("\n\n").map((para, j) => (
+                      <p key={j} className="text-gray-600 leading-relaxed text-sm">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-center gap-4 mt-8">
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80"
                       style={{ color: "#2A6475" }}
                     >
-                      {member.title}
-                    </p>
-                    <div className="space-y-4">
-                      {member.bio.split("\n\n").map((para, j) => (
-                        <p key={j} className="text-gray-600 leading-relaxed text-sm">
-                          {para}
-                        </p>
-                      ))}
-                    </div>
-                    <div className="flex items-center gap-4 mt-8">
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80"
-                        style={{ color: "#2A6475" }}
-                      >
-                        <Mail size={16} /> {member.email}
-                      </a>
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80"
-                        style={{ color: "#2A6475" }}
-                      >
-                        <LinkedinIcon size={16} /> LinkedIn
-                      </a>
-                    </div>
+                      <Mail size={16} /> {member.email}
+                    </a>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80"
+                      style={{ color: "#2A6475" }}
+                    >
+                      <LinkedinIcon size={16} /> LinkedIn
+                    </a>
                   </div>
                 </div>
               </div>
