@@ -164,19 +164,9 @@ export default async function HomePage() {
             >
               Comprehensive Aviation Services
             </h2>
-            <p className="text-gray-600 leading-relaxed max-w-4xl mx-auto text-left">
-              At Jetz Aviation, we believe buying or selling an aircraft is about far more than
-              completing a transaction—it&rsquo;s about protecting an investment and making decisions
-              with confidence. Unlike traditional aircraft brokers, our experience extends well
-              beyond the marketplace. With decades of hands-on leadership as a Chief Pilot,
-              Operations Manager, and aircraft maintenance oversight professional, combined with
-              extensive experience in aircraft acquisitions, ownership advisory, and cross-border
-              importation, we understand every stage of the ownership journey. We have sat in the
-              owner&rsquo;s seat, managed the complexities of operating high-value aircraft, and
-              appreciate the responsibility that comes with every decision. That perspective allows
-              us to serve as a trusted advisor—providing discreet, independent guidance tailored to
-              each client&rsquo;s unique objectives while delivering the highest standard of
-              professionalism, integrity, and personal service.
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              From identifying the ideal aircraft to closing the transaction and beyond,
+              Jetz Aviation provides end-to-end support across every dimension of business aviation.
             </p>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -223,6 +213,42 @@ export default async function HomePage() {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Why Work With Us */}
+      <section className="py-24" style={{ backgroundColor: "#F9FAFB" }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-10">
+            <p
+              className="text-sm font-semibold uppercase tracking-widest mb-4"
+              style={{ color: "#2A6475" }}
+            >
+              Why Work With Us
+            </p>
+            <h2
+              className="text-3xl sm:text-4xl font-bold"
+              style={{ fontFamily: "var(--font-playfair)", color: "#0F2D3D" }}
+            >
+              A Different Kind of Advisor
+            </h2>
+          </AnimatedSection>
+          <AnimatedSection>
+            <p className="text-gray-600 leading-relaxed text-lg">
+              At Jetz Aviation, we believe buying or selling an aircraft is about far more than
+              completing a transaction—it&rsquo;s about protecting an investment and making decisions
+              with confidence. Unlike traditional aircraft brokers, our experience extends well
+              beyond the marketplace. With decades of hands-on leadership as a Chief Pilot,
+              Operations Manager, and aircraft maintenance oversight professional, combined with
+              extensive experience in aircraft acquisitions, ownership advisory, and cross-border
+              importation, we understand every stage of the ownership journey. We have sat in the
+              owner&rsquo;s seat, managed the complexities of operating high-value aircraft, and
+              appreciate the responsibility that comes with every decision. That perspective allows
+              us to serve as a trusted advisor—providing discreet, independent guidance tailored to
+              each client&rsquo;s unique objectives while delivering the highest standard of
+              professionalism, integrity, and personal service.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
