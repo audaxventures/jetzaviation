@@ -43,7 +43,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/">
-              <Logo width={160} height={45} inverted={true} className="mb-4" />
+              <Logo height={45} inverted={true} className="mb-4" />
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed max-w-xs mb-6">
               Elevating aircraft acquisition and brokerage for high net worth individuals

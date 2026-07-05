@@ -98,7 +98,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <Logo width={180} height={50} />
+          <Logo height={72} />
         </Link>
 
         {/* Desktop Nav */}
