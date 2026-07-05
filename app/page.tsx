@@ -96,7 +96,7 @@ export default async function HomePage() {
       <HeroSection
         imageUrl={heroImage}
         headline="Elevating Your Aircraft Acquisition Experience"
-        subheadline="Jetz Aviation provides expert brokerage, acquisition strategy, and aviation consulting for discerning individuals and corporations seeking exceptional aircraft."
+        subheadline="Jetz Aviation provides independent aircraft acquisition, sales, management and cross-border advisory services for business aircraft owners throughout Canada and the United States."
         ctaPrimary={{ label: "Explore Our Services", href: "/services/aircraft-brokerage" }}
         ctaSecondary={{ label: "Contact Us", href: "/contact" }}
       />
