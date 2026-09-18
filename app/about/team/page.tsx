@@ -19,7 +19,7 @@ const team = [
     title: "President",
     bio: "Mike Zaporzan founded Jetz Aviation with a vision to bring institutional-grade aircraft acquisition expertise to individual and corporate clients across Canada and internationally. With an extensive background in business aviation transactions, market analysis, and client advisory, Mike has guided clients through the full spectrum of aircraft acquisitions — from light jets to ultra-long-range cabin aircraft.\n\nMike is known for his straight-forward approach, deep market relationships, and ability to navigate complex transactions efficiently. He takes personal responsibility for every client engagement, ensuring that each acquisition reflects the client's specific mission requirements, financial objectives, and operational preferences.\n\nA licensed pilot and passionate aviation enthusiast, Mike brings firsthand appreciation for what makes an aircraft the right fit — technically, operationally, and experientially.",
     email: "mike@jetzaviation.com",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/michaelzaporzan/",
   },
 ];
 

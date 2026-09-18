@@ -70,6 +70,7 @@ const organizationJsonLd = {
   },
   areaServed: ["CA", "US"],
   priceRange: "$$$$",
+  sameAs: ["https://www.linkedin.com/in/michaelzaporzan/"],
 };
 
 export default function RootLayout({

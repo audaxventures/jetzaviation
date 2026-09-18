@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { LinkedinIcon, InstagramIcon, FacebookIcon, XIcon } from "./SocialIcons";
+import { LinkedinIcon } from "./SocialIcons";
 
 const navGroups = [
   {
@@ -46,40 +46,13 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/michaelzaporzan/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon size={18} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="Instagram"
-              >
-                <InstagramIcon size={18} />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="Facebook"
-              >
-                <FacebookIcon size={18} />
-              </a>
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="X (Twitter)"
-              >
-                <XIcon size={18} />
               </a>
             </div>
           </div>
