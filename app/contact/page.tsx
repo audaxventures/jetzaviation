@@ -1,5 +1,5 @@
 import ContactForm from "./ContactForm";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default function ContactPage() {
@@ -116,20 +116,6 @@ export default function ContactPage() {
                           Location
                         </p>
                         <p className="text-gray-800 font-medium">Winnipeg, MB, Canada</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div
-                        className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                        style={{ backgroundColor: "rgba(42, 100, 117, 0.08)" }}
-                      >
-                        <Clock size={18} style={{ color: "#2A6475" }} />
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">
-                          Response Time
-                        </p>
-                        <p className="text-gray-800 font-medium">Within 1 business day</p>
                       </div>
                     </div>
                   </div>
