@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
+
+export const metadata: Metadata = {
+  title: "Aviation Consulting & Project Management | Jetz Aviation",
+  description:
+    "Strategic aviation advisory plus hands-on project management for completions — pre-purchase inspections, paint, interior changes, and major upgrades.",
+  alternates: {
+    canonical: "/services/aviation-consulting",
+  },
+};
 
 export default async function AviationConsultingPage() {
   const heroImage = "/images/jet-cockpit.jpg";

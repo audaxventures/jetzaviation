@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
+
+export const metadata: Metadata = {
+  title: "Aircraft Acquisition & Strategy | Jetz Aviation",
+  description:
+    "End-to-end business aircraft acquisition management — mission analysis, global market search, pre-buy inspection oversight, and closing coordination.",
+  alternates: {
+    canonical: "/services/aircraft-acquisition",
+  },
+};
 
 export default async function AircraftAcquisitionPage() {
   const heroImage = "/images/jet-exterior.jpg";

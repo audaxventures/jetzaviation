@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import { blogPosts } from "@/lib/blog-data";
 import HeroSection from "@/components/HeroSection";
 import BlogCard from "@/components/BlogCard";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Market Insights & News | Jetz Aviation",
+  description:
+    "Expert articles on business aviation market trends, acquisition strategy, ownership models, and industry news from the Jetz Aviation team.",
+  alternates: {
+    canonical: "/resources/market-insights",
+  },
+};
 
 export default async function MarketInsightsPage() {
   const heroImage = "/images/jet-cockpit.jpg";

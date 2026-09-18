@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
+
+export const metadata: Metadata = {
+  title: "Aircraft Valuation Services | Independent Jet Appraisals",
+  description:
+    "Independent, data-driven business aircraft valuations for purchase, sale, insurance, estate planning, and financial reporting purposes.",
+  alternates: {
+    canonical: "/services/aircraft-valuation",
+  },
+};
 
 export default async function AircraftValuationPage() {
   const heroImage = "/images/jet-interior.jpg";

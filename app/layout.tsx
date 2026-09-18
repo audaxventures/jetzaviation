@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
   keywords: "aircraft brokerage, aircraft acquisition, private jet, business aviation, aircraft valuation, aviation consulting",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: siteTitle,
     description: siteDescription,
@@ -49,6 +52,26 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Jetz Aviation",
+  description: siteDescription,
+  url: "https://jetzaviation.com",
+  logo: "https://jetzaviation.com/icon.png",
+  image: "https://jetzaviation.com/images/og-image.jpg",
+  telephone: "+1-204-296-5389",
+  email: "mike@jetzaviation.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Winnipeg",
+    addressRegion: "MB",
+    addressCountry: "CA",
+  },
+  areaServed: ["CA", "US"],
+  priceRange: "$$$$",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,6 +86,10 @@ export default function RootLayout({
         className="min-h-full flex flex-col"
         style={{ fontFamily: "var(--font-inter), sans-serif", backgroundColor: "#F9FAFB" }}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Navbar />
         <main className="flex-grow pt-20">{children}</main>
         <Footer />

@@ -1,7 +1,17 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Handshake, Search, BarChart3, Briefcase, ArrowRight } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Our Services | Aircraft Brokerage, Acquisition & Consulting",
+  description:
+    "Explore Jetz Aviation's services: aircraft brokerage, acquisition strategy, independent valuation, and aviation consulting & project management for clients across Canada and the U.S.",
+  alternates: {
+    canonical: "/services",
+  },
+};
 
 const services = [
   {

@@ -1,7 +1,17 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { BarChart2, BookOpen, ArrowRight } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Aviation Resources | Tools & Market Insights",
+  description:
+    "Explore Jetz Aviation's free aircraft comparison tool and in-depth market insights articles to inform your business aviation decisions.",
+  alternates: {
+    canonical: "/resources",
+  },
+};
 
 export default async function ResourcesPage() {
   const heroImage = "/images/jet-interior.jpg";

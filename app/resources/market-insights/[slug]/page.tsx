@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: Params) {
   return {
     title: `${post.title} | Jetz Aviation`,
     description: post.excerpt,
+    alternates: {
+      canonical: `/resources/market-insights/${post.slug}`,
+    },
   };
 }
 
@@ -36,8 +39,37 @@ export default async function BlogPostPage({ params }: Params) {
 
   const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Organization",
+      name: "Jetz Aviation",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Jetz Aviation",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://jetzaviation.com/icon.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://jetzaviation.com/resources/market-insights/${post.slug}`,
+    },
+  };
+
   return (
     <div style={{ backgroundColor: "#F9FAFB" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* Header */}
       <div
         className="py-20"

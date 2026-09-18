@@ -1,7 +1,17 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArrowRight, Target, Eye, Heart, Globe } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroSection from "@/components/HeroSection";
+
+export const metadata: Metadata = {
+  title: "About Jetz Aviation | Your Cross-Border Aviation Experts",
+  description:
+    "Jetz Aviation is a boutique aircraft brokerage and consultancy built on expertise, integrity, and results — serving clients across Canada and the United States.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 const values = [
   {

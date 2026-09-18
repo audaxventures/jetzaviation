@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import AircraftComparisonTool from "./AircraftComparisonTool";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Aircraft Comparison Tool | Compare Business Jets",
+  description:
+    "Compare specifications, performance, and pricing for leading business jets side-by-side with Jetz Aviation's free aircraft comparison tool.",
+  alternates: {
+    canonical: "/resources/aircraft-comparison",
+  },
+};
 
 export default function AircraftComparisonPage() {
   return (

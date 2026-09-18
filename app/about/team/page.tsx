@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import { Mail } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroSection from "@/components/HeroSection";
 import { LinkedinIcon } from "@/components/SocialIcons";
+
+export const metadata: Metadata = {
+  title: "Our Team | Jetz Aviation Leadership",
+  description:
+    "Meet the experienced aviation professionals behind Jetz Aviation, dedicated to guiding clients through every stage of business aircraft ownership.",
+  alternates: {
+    canonical: "/about/team",
+  },
+};
 
 const team = [
   {

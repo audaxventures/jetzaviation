@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
+
+export const metadata: Metadata = {
+  title: "Aircraft Brokerage Services | Buy & Sell Business Jets",
+  description:
+    "Expert representation for buyers and sellers of pre-owned business jets, turboprops, and helicopters. Global market access, negotiation, and transaction management.",
+  alternates: {
+    canonical: "/services/aircraft-brokerage",
+  },
+};
 
 export default async function AircraftBrokeragePage() {
   const heroImage = "/images/jet-runway.jpg";

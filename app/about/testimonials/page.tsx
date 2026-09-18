@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import TestimonialCard from "@/components/TestimonialCard";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Client Testimonials | Jetz Aviation",
+  description:
+    "Read what corporate and private clients across Canada say about their experience working with Jetz Aviation on business aircraft acquisitions and sales.",
+  alternates: {
+    canonical: "/about/testimonials",
+  },
+};
 
 const testimonials = [
   {

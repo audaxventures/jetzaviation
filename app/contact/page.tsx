@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import ContactForm from "./ContactForm";
 import { MapPin, Phone, Mail } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Contact Jetz Aviation | Aircraft Brokerage Inquiries",
+  description:
+    "Get in touch with Jetz Aviation for confidential aircraft brokerage, acquisition, valuation, or consulting inquiries across Canada and the United States.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (
