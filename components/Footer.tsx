@@ -9,6 +9,7 @@ const navGroups = [
       { label: "About Jetz Aviation", href: "/about" },
       { label: "Our Team", href: "/about/team" },
       { label: "Testimonials", href: "/about/testimonials" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
   {
@@ -25,12 +26,6 @@ const navGroups = [
     links: [
       { label: "Aircraft Comparison", href: "/resources/aircraft-comparison" },
       { label: "Market Insights", href: "/resources/market-insights" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "Contact Us", href: "/contact" },
     ],
   },
 ];
