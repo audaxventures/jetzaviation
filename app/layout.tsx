@@ -16,11 +16,37 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteTitle = "Jetz Aviation | Aircraft Brokerage & Acquisition Consultancy";
+const siteDescription =
+  "Jetz Aviation provides expert aircraft brokerage, acquisition strategy, valuation, and aviation consulting services for high net worth individuals and corporations across Canada and the United States.";
+
 export const metadata: Metadata = {
-  title: "Jetz Aviation | Aircraft Brokerage & Acquisition Consultancy",
-  description:
-    "Jetz Aviation provides expert aircraft brokerage, acquisition strategy, valuation, and aviation consulting services for high net worth individuals and corporations.",
+  metadataBase: new URL("https://jetzaviation.com"),
+  title: siteTitle,
+  description: siteDescription,
   keywords: "aircraft brokerage, aircraft acquisition, private jet, business aviation, aircraft valuation, aviation consulting",
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: "/",
+    siteName: "Jetz Aviation",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Jetz Aviation",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/images/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
