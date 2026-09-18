@@ -17,7 +17,7 @@ const navGroups = [
       { label: "Aircraft Brokerage", href: "/services/aircraft-brokerage" },
       { label: "Acquisition & Strategy", href: "/services/aircraft-acquisition" },
       { label: "Aircraft Valuation", href: "/services/aircraft-valuation" },
-      { label: "Aviation Consulting", href: "/services/aviation-consulting" },
+      { label: "Aviation Consulting & Project Management", href: "/services/aviation-consulting" },
     ],
   },
   {

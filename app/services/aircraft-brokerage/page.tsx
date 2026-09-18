@@ -1,4 +1,3 @@
-import { Handshake } from "lucide-react";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
 
 export default async function AircraftBrokeragePage() {
@@ -9,7 +8,6 @@ export default async function AircraftBrokeragePage() {
       heroImage={heroImage}
       title="Aircraft Brokerage"
       subtitle="Expert representation for buyers and sellers in the global business aviation market."
-      icon={<Handshake size={28} className="text-white" />}
       description={`Jetz Aviation provides full-service aircraft brokerage for both buyers and sellers of pre-owned business jets, turboprops, and helicopters. Whether you are looking to acquire or divest, our team brings unmatched market expertise, transactional skill, and a global network of qualified counterparties to every engagement.
 
 For sellers, we develop comprehensive marketing strategies tailored to your aircraft's unique profile — positioning it accurately in the market, identifying qualified buyers efficiently, and negotiating terms that maximize your proceeds. We handle all aspects of the transaction from listing through closing, including escrow coordination, title insurance, and documentation.

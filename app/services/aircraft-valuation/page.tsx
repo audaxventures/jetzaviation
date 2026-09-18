@@ -1,4 +1,3 @@
-import { BarChart3 } from "lucide-react";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
 
 export default async function AircraftValuationPage() {
@@ -9,7 +8,6 @@ export default async function AircraftValuationPage() {
       heroImage={heroImage}
       title="Aircraft Valuation"
       subtitle="Independent, data-driven valuations for every stage of the aircraft lifecycle."
-      icon={<BarChart3 size={28} className="text-white" />}
       description={`Whether you are buying, selling, refinancing, insuring, or planning your estate, an accurate aircraft valuation is an essential foundation for sound decision-making. Yet aircraft valuations that merely reference published price guides — without accounting for the individual aircraft's maintenance status, equipment, damage history, and current market dynamics — can differ dramatically from actual transactional value.
 
 Jetz Aviation provides comprehensive aircraft valuations that reflect the true market reality for your specific aircraft. Our valuations go beyond reference guide pricing to incorporate current market comparable analysis, maintenance status assessment, equipment and modification review, and the nuanced supply-demand dynamics of the relevant market segment.

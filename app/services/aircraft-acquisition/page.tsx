@@ -1,4 +1,3 @@
-import { Search } from "lucide-react";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
 
 export default async function AircraftAcquisitionPage() {
@@ -9,7 +8,6 @@ export default async function AircraftAcquisitionPage() {
       heroImage={heroImage}
       title="Aircraft Acquisition & Strategy"
       subtitle="End-to-end acquisition management for discerning buyers seeking the right aircraft."
-      icon={<Search size={28} className="text-white" />}
       description={`Acquiring a business aircraft is one of the most complex and consequential capital decisions a corporation or individual can make. The stakes — financial, operational, and reputational — demand a level of expertise and diligence that most buyers cannot develop through a one-time transaction.
 
 Jetz Aviation's aircraft acquisition service provides comprehensive, end-to-end management of the entire purchase process. We begin by developing a detailed understanding of your aviation mission — the routes you fly, the passengers you carry, the airports you use — and use that analysis to define objective selection criteria that go far beyond cabin size and price.

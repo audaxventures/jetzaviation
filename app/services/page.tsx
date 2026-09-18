@@ -27,9 +27,9 @@ const services = [
   },
   {
     Icon: Briefcase,
-    title: "Aviation Consulting",
+    title: "Aviation Consulting & Project Management",
     description:
-      "Strategic advisory services covering ownership structures, fleet planning, operator selection, regulatory compliance, and all facets of business aviation management.",
+      "Strategic advisory services covering ownership structures, fleet planning, operator selection, and regulatory compliance — plus hands-on project management for completions and upgrades.",
     href: "/services/aviation-consulting",
   },
 ];

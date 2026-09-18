@@ -52,9 +52,9 @@ const services = [
   },
   {
     icon: <Briefcase size={26} style={{ color: "#2A6475" }} />,
-    title: "Aviation Consulting",
+    title: "Aviation Consulting & Project Management",
     description:
-      "Strategic advisory for ownership structure, fleet planning, operator selection, and all facets of business aviation management.",
+      "Strategic advisory for ownership structure, fleet planning, and operator selection — plus hands-on project management for completions and upgrades.",
     href: "/services/aviation-consulting",
   },
 ];

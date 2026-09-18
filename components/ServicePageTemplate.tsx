@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2, Phone, Mail } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
-import { ReactNode } from "react";
 
 interface Step {
   number: string;
@@ -10,14 +9,25 @@ interface Step {
   description: string;
 }
 
+interface SecondaryServiceItem {
+  title: string;
+  description: string;
+}
+
+interface SecondaryService {
+  title: string;
+  intro: string;
+  items: SecondaryServiceItem[];
+}
+
 interface ServicePageTemplateProps {
   heroImage: string;
   title: string;
   subtitle: string;
   description: string;
-  icon: ReactNode;
   steps: Step[];
   benefits: string[];
+  secondaryService?: SecondaryService;
 }
 
 export default function ServicePageTemplate({
@@ -25,9 +35,9 @@ export default function ServicePageTemplate({
   title,
   subtitle,
   description,
-  icon,
   steps,
   benefits,
+  secondaryService,
 }: ServicePageTemplateProps) {
   return (
     <main className="min-h-screen" style={{ backgroundColor: "#F9FAFB" }}>
@@ -46,12 +56,6 @@ export default function ServicePageTemplate({
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div
-              className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
-              style={{ backgroundColor: "rgba(255,255,255,0.15)" }}
-            >
-              {icon}
-            </div>
             <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "rgba(150,210,220,0.9)" }}>
               Our Services
             </p>
@@ -84,6 +88,35 @@ export default function ServicePageTemplate({
                 ))}
               </div>
             </AnimatedSection>
+
+            {secondaryService && (
+              <AnimatedSection delay={0.05}>
+                <h2
+                  className="text-3xl font-bold mb-6"
+                  style={{ fontFamily: "var(--font-playfair)", color: "#0F2D3D" }}
+                >
+                  {secondaryService.title}
+                </h2>
+                <div className="prose prose-lg text-gray-600 leading-relaxed space-y-4 mb-8">
+                  {secondaryService.intro.split("\n\n").map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {secondaryService.items.map((item, i) => (
+                    <div
+                      key={i}
+                      className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm"
+                    >
+                      <h4 className="text-lg font-bold mb-2" style={{ color: "#0F2D3D" }}>
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            )}
 
             <AnimatedSection delay={0.1}>
               <h3
@@ -182,7 +215,7 @@ export default function ServicePageTemplate({
                       { label: "Aircraft Brokerage", href: "/services/aircraft-brokerage" },
                       { label: "Acquisition & Strategy", href: "/services/aircraft-acquisition" },
                       { label: "Aircraft Valuation", href: "/services/aircraft-valuation" },
-                      { label: "Aviation Consulting", href: "/services/aviation-consulting" },
+                      { label: "Aviation Consulting & Project Management", href: "/services/aviation-consulting" },
                     ].map((s) => (
                       <Link
                         key={s.href}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Target, Eye, Heart } from "lucide-react";
+import { ArrowRight, Target, Eye, Heart, Globe } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroSection from "@/components/HeroSection";
 
@@ -33,7 +33,7 @@ export default async function AboutPage() {
       <HeroSection
         imageUrl={heroImage}
         headline="About Jetz Aviation"
-        subheadline="A boutique aviation consultancy built on expertise, integrity, and an unwavering commitment to client outcomes."
+        subheadline="A boutique aviation consultancy built on expertise, integrity, and an unwavering commitment to client outcomes — your cross-border expert across Canada and the United States."
         overlay={0.55}
         height="h-[65vh]"
       />
@@ -62,9 +62,10 @@ export default async function AboutPage() {
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
                 Based in Winnipeg, Manitoba, we have built our reputation on quiet, effective
-                representation and exceptional results. Our client roster spans corporate flight
-                departments, family offices, and individual owners across North America and
-                internationally.
+                representation and exceptional results. Let Jetz Aviation be your cross-border
+                expert — seamlessly bridging Canadian and U.S. aviation markets across every
+                service we offer. Our client roster spans corporate flight departments, family
+                offices, and individual owners across North America and internationally.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 In an industry where relationships and reputation are everything, Jetz Aviation
@@ -80,6 +81,34 @@ export default async function AboutPage() {
               />
             </AnimatedSection>
           </div>
+        </div>
+      </section>
+
+      <section className="py-14" style={{ backgroundColor: "#0F2D3D" }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+            <div
+              className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center"
+              style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
+            >
+              <Globe size={28} className="text-white" />
+            </div>
+            <div>
+              <p
+                className="text-sm font-semibold uppercase tracking-widest mb-2"
+                style={{ color: "rgba(150,210,220,0.9)" }}
+              >
+                Cross-Border Expertise
+              </p>
+              <p
+                className="text-xl sm:text-2xl font-bold text-white leading-snug"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Let Jetz Aviation be your cross-border expert — across all the services we
+                offer, from acquisition and brokerage to consulting and project management.
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
