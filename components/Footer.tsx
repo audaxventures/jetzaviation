@@ -108,7 +108,7 @@ export default function Footer() {
 
         {/* Contact strip */}
         <div
-          className="border-t py-6 mb-6 flex flex-wrap gap-6 text-sm text-gray-400"
+          className="border-t pt-6 pb-6 flex flex-wrap justify-center items-center gap-6 text-sm text-gray-400"
           style={{ borderColor: "rgba(255,255,255,0.1)" }}
         >
           <a href="tel:+12042965389" className="hover:text-white transition-colors">
@@ -127,6 +127,18 @@ export default function Footer() {
         >
           <p>© {new Date().getFullYear()} Jetz Aviation. All rights reserved.</p>
           <p>Aircraft Brokerage &amp; Acquisition Consultancy</p>
+        </div>
+
+        {/* Credit */}
+        <div className="pt-6 text-center text-xs text-gray-500">
+          <a
+            href="https://www.audaxventures.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors"
+          >
+            Website Designed &amp; Developed by Audax Ventures
+          </a>
         </div>
       </div>
     </footer>
