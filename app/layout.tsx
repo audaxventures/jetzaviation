@@ -18,7 +18,7 @@ const inter = Inter({
 
 const siteTitle = "Jetz Aviation | Aircraft Brokerage & Acquisition Consultancy";
 const siteDescription =
-  "Jetz Aviation provides expert aircraft brokerage, acquisition strategy, valuation, and aviation consulting services for high net worth individuals and corporations across Canada and the United States.";
+  "Jetz Aviation provides independent aircraft acquisition, sales, management and cross-border advisory services for business aircraft owners throughout Canada and the United States.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jetzaviation.com"),
