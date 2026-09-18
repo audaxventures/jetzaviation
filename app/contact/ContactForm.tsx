@@ -99,7 +99,7 @@ export default function ContactForm() {
         </h3>
         <p className="text-gray-600 max-w-xs leading-relaxed">
           Thank you for reaching out. A member of the Jetz Aviation team will be in touch
-          within one business day.
+          with you shortly.
         </p>
         <button
           onClick={() => {
