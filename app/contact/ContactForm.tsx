@@ -1,7 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Script from "next/script";
 import { CheckCircle2, Send } from "lucide-react";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (container: HTMLElement, options: Record<string, unknown>) => string;
+      reset: (widgetId?: string) => void;
+      remove: (widgetId?: string) => void;
+    };
+  }
+}
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 interface FormData {
   name: string;
@@ -33,6 +46,37 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetId = useRef<string | null>(null);
+  const formLoadedAt = useRef<number>(0);
+
+  const renderTurnstile = () => {
+    if (!window.turnstile || !turnstileContainerRef.current || !TURNSTILE_SITE_KEY) return;
+    if (turnstileWidgetId.current) return;
+    turnstileWidgetId.current = window.turnstile.render(turnstileContainerRef.current, {
+      sitekey: TURNSTILE_SITE_KEY,
+      callback: (token: string) => setTurnstileToken(token),
+      "expired-callback": () => setTurnstileToken(""),
+      "error-callback": () => setTurnstileToken(""),
+    });
+  };
+
+  useEffect(() => {
+    formLoadedAt.current = Date.now();
+    if (typeof window !== "undefined" && window.turnstile) {
+      renderTurnstile();
+    }
+  }, []);
+
+  const resetTurnstile = () => {
+    setTurnstileToken("");
+    if (window.turnstile && turnstileWidgetId.current) {
+      window.turnstile.reset(turnstileWidgetId.current);
+    }
+  };
 
   const validate = (): boolean => {
     const newErrors: Errors = {};
@@ -50,13 +94,24 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+
+    if (!turnstileToken) {
+      setSubmitError("Please complete the verification challenge before sending.");
+      return;
+    }
+
     setSubmitting(true);
     setSubmitError(null);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          turnstileToken,
+          website: honeypotRef.current?.value ?? "",
+          elapsedMs: Date.now() - formLoadedAt.current,
+        }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => null);
@@ -67,6 +122,7 @@ export default function ContactForm() {
       setSubmitError(
         err instanceof Error ? err.message : "Something went wrong. Please try again."
       );
+      resetTurnstile();
     } finally {
       setSubmitting(false);
     }
@@ -105,6 +161,8 @@ export default function ContactForm() {
           onClick={() => {
             setForm(initialData);
             setSubmitted(false);
+            formLoadedAt.current = Date.now();
+            resetTurnstile();
           }}
           className="mt-8 text-sm font-semibold hover:opacity-80 transition-opacity"
           style={{ color: "#2A6475" }}
@@ -124,6 +182,25 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        strategy="afterInteractive"
+        onLoad={renderTurnstile}
+      />
+
+      {/* Honeypot field — hidden from sighted users and screen readers, bots fill it anyway */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px" }}>
+        <label htmlFor="website">Website</label>
+        <input
+          ref={honeypotRef}
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -221,6 +298,8 @@ export default function ContactForm() {
           <p className="mt-1.5 text-xs text-red-500">{errors.message}</p>
         )}
       </div>
+
+      <div ref={turnstileContainerRef} />
 
       {submitError && (
         <p className="text-sm text-red-500 text-center">{submitError}</p>

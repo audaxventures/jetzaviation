@@ -5,6 +5,8 @@ const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "mike@jetzaviation.com"
 const CONTACT_FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL || "Jetz Aviation Website <onboarding@resend.dev>";
 
+const MIN_SUBMIT_MS = 1500;
+
 const INTEREST_LABELS: Record<string, string> = {
   buying: "Buying an Aircraft",
   selling: "Selling an Aircraft",
@@ -20,6 +22,9 @@ interface ContactPayload {
   phone?: string;
   interest?: string;
   message?: string;
+  turnstileToken?: string;
+  website?: string;
+  elapsedMs?: number;
 }
 
 const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -31,6 +36,32 @@ const escapeHtml = (value: string) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
+async function verifyTurnstile(token: string, remoteIp?: string): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) {
+    console.error("Contact form submission failed: TURNSTILE_SECRET_KEY is not configured.");
+    return false;
+  }
+  if (!token) return false;
+
+  const body = new URLSearchParams();
+  body.append("secret", secret);
+  body.append("response", token);
+  if (remoteIp) body.append("remoteip", remoteIp);
+
+  try {
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body,
+    });
+    const data = await res.json();
+    return data.success === true;
+  } catch (err) {
+    console.error("Turnstile verification request failed:", err);
+    return false;
+  }
+}
+
 export async function POST(request: Request) {
   let payload: ContactPayload;
   try {
@@ -39,16 +70,46 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
+  // Honeypot: real users never fill this field, since it's hidden from sight and
+  // screen readers. A filled value means a bot is blindly submitting every field —
+  // fake success so it doesn't learn to work around the trap.
+  if ((payload.website ?? "").trim()) {
+    return NextResponse.json({ success: true });
+  }
+
+  // Timing: no human fills out this form in under 1.5s. This is a soft signal
+  // (spoofable by a determined bot), not a substitute for Turnstile below.
+  if (typeof payload.elapsedMs === "number" && payload.elapsedMs < MIN_SUBMIT_MS) {
+    return NextResponse.json({ success: true });
+  }
+
   const name = (payload.name ?? "").trim();
   const email = (payload.email ?? "").trim();
   const message = (payload.message ?? "").trim();
   const company = (payload.company ?? "").trim();
   const phone = (payload.phone ?? "").trim();
   const interest = (payload.interest ?? "").trim();
+  const turnstileToken = (payload.turnstileToken ?? "").trim();
 
   if (!name || !email || !message || !isValidEmail(email)) {
     return NextResponse.json(
       { error: "Please provide a valid name, email address, and message." },
+      { status: 400 }
+    );
+  }
+
+  if (!turnstileToken) {
+    return NextResponse.json(
+      { error: "Please complete the verification challenge before sending." },
+      { status: 400 }
+    );
+  }
+
+  const remoteIp = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  const verified = await verifyTurnstile(turnstileToken, remoteIp);
+  if (!verified) {
+    return NextResponse.json(
+      { error: "Verification failed. Please refresh the page and try again." },
       { status: 400 }
     );
   }
